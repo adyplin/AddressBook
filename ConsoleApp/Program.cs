@@ -25,18 +25,19 @@ while (true)
                 break;
 
             case 2:
-                
+                Console.Clear();
                 menuManager.ShowOneContact();
                 Console.ReadKey();
                 break;
 
             case 3:
-                
+                Console.Clear();
                 menuManager.ShowAllContacts();
                 Console.ReadKey();
                 break;
 
             case 4:
+                Console.Clear();
                 menuManager.RemoveContact();
                 Console.ReadKey();
                 break;
@@ -47,11 +48,14 @@ while (true)
 
             default:
                 Console.WriteLine("Invalid choice. Please try again.");
+                Console.ReadKey();
                 break;
         }
     }
+
     else
     {
         Console.WriteLine("Invalid input. Please enter a number.");
+        Console.ReadKey();
     }
 }

@@ -10,14 +10,17 @@ public class ContactManager
     private List<Contact> _contactsList = new List<Contact>();
 
     public void AddContactToList(Contact contact)
-    {
+    { 
        try
-        {
+        { 
             if (!_contactsList.Any(c => c.Email == contact.Email))
             {
                 _contactsList.Add(contact);
 
                 _fileManager.SaveContentToFile(JsonConvert.SerializeObject(_contactsList));
+
+                Console.WriteLine("Contact added");
+                Console.ReadKey();
             }
             else
             {
@@ -62,8 +65,6 @@ public class ContactManager
         _contactsList.Remove(contact);
         _fileManager.SaveContentToFile(JsonConvert.SerializeObject(_contactsList));
     }
-
-
 }
 
 

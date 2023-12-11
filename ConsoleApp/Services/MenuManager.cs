@@ -10,37 +10,35 @@ public class MenuManager
     {
         Contact contact = new Contact();
 
-        Console.Write("Enter your first name: ");
+        Console.Write("Enter first name: ");
         contact.FirstName = Console.ReadLine()!;
 
-        Console.Write("Enter your last name: ");
+        Console.Write("Enter last name: ");
         contact.LastName = Console.ReadLine()!;
 
-        Console.Write("Enter your email: ");
+        Console.Write("Enter email: ");
         contact.Email = Console.ReadLine()!;
 
-        Console.Write("Enter your phonenumber: ");
+        Console.Write("Enter phonenumber: ");
         contact.PhoneNumber = Console.ReadLine()!;
 
-        Console.Write("Enter your address: ");
+        Console.Write("Enter address: ");
         contact.Address = Console.ReadLine()!;
 
-        Console.Write("Enter your city: ");
+        Console.Write("Enter city: ");
         contact.City = Console.ReadLine()!;
 
-        Console.Write("Enter your postal code: ");
+        Console.Write("Enter postal code: ");
         contact.PostalCode = Console.ReadLine()!;
 
         _contactManager.AddContactToList(contact);
-
-        Console.WriteLine("Contact was added successfully");
-        Console.ReadKey();
     }
+
 
     public void ShowOneContact()
     {
 
-        Console.Write("Enter email or name of the contact to show: ");
+        Console.Write("Enter email or first and last name of the contact to show: ");
         string searchKey = Console.ReadLine()!;
 
         try
@@ -59,13 +57,11 @@ public class MenuManager
             else
             {
                 Console.WriteLine("Contact not found.");
-                Console.ReadKey();
             }
         }
         catch (Exception ex)
         {
             Console.WriteLine($"An error occurred while showing the contact: {ex.Message}");
-            Console.ReadKey();
         }
     }
 
@@ -82,28 +78,23 @@ public class MenuManager
                 {
                     Console.WriteLine($"Name: {contact.FirstName} {contact.LastName}");
                     Console.WriteLine($"Email: {contact.Email}");
-                    Console.WriteLine($"Phone Number: {contact.PhoneNumber}");
-                    Console.WriteLine($"Address: {contact.Address}, {contact.City}, {contact.PostalCode}");
                     Console.WriteLine("---------------");
-
                 }
             }
             else
             {
                 Console.WriteLine("No contacts available.");
-                Console.ReadKey();
             }
         }
         catch (Exception ex)
         {
             Console.WriteLine($"An error occurred while loading contacts: {ex.Message}");
-            Console.ReadKey();
         }
     }
 
     public void RemoveContact()
     {
-        Console.Write("Enter email or name of the contact to remove: ");
+        Console.Write("Enter email or first and last name of the contact to remove: ");
         string searchKey = Console.ReadLine()!;
 
         try
@@ -114,18 +105,15 @@ public class MenuManager
             {
                 _contactManager.RemoveContactFromList(contactToRemove);
                 Console.WriteLine("Contact removed successfully.");
-                Console.ReadKey();
             }
             else
             {
                 Console.WriteLine("Contact not found.");
-                Console.ReadKey();
             }
         }
         catch (Exception ex)
         {
             Console.WriteLine($"An error occurred while removing the contact: {ex.Message}");
-            Console.ReadKey();
         }
     }
 }
