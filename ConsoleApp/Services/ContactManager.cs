@@ -19,12 +19,12 @@ public class ContactManager
 
                 _fileManager.SaveContentToFile(JsonConvert.SerializeObject(_contactsList));
 
-                Console.WriteLine("Contact added");
+                Console.WriteLine("\nContact added");
                 Console.ReadKey();
             }
             else
             {
-                Console.WriteLine("Contact with this email already exists.");
+                Console.WriteLine("\nContact with this email already exists.");
                 Console.ReadKey();
             }
         }
@@ -32,6 +32,26 @@ public class ContactManager
     }
 
     public IEnumerable<Contact> GetContactFromList() 
+    {
+        try
+        {
+            var content = _fileManager.GetContentFromFile();
+            if (!string.IsNullOrEmpty(content))
+            {
+                var settings = new JsonSerializerSettings
+                {
+                    TypeNameHandling = TypeNameHandling.All
+                };
+                _contactsList = JsonConvert.DeserializeObject<List<Contact>>(content)!;
+            }
+
+        }
+        catch (Exception ex) { Debug.WriteLine(ex.Message); }
+
+        return _contactsList;
+    }
+
+    public IEnumerable<Contact> GetContactsFromList()
     {
         try
         {

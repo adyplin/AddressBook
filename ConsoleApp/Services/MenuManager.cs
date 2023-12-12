@@ -10,25 +10,25 @@ public class MenuManager
     {
         Contact contact = new Contact();
 
-        Console.Write("Enter first name: ");
+        Console.Write("Enter First name: ");
         contact.FirstName = Console.ReadLine()!;
 
-        Console.Write("Enter last name: ");
+        Console.Write("Enter Last name: ");
         contact.LastName = Console.ReadLine()!;
 
-        Console.Write("Enter email: ");
+        Console.Write("Enter Email: ");
         contact.Email = Console.ReadLine()!;
 
-        Console.Write("Enter phonenumber: ");
+        Console.Write("Enter Phone number: ");
         contact.PhoneNumber = Console.ReadLine()!;
 
-        Console.Write("Enter address: ");
+        Console.Write("Enter Address: ");
         contact.Address = Console.ReadLine()!;
 
-        Console.Write("Enter city: ");
+        Console.Write("Enter City: ");
         contact.City = Console.ReadLine()!;
 
-        Console.Write("Enter postal code: ");
+        Console.Write("Enter Postal code: ");
         contact.PostalCode = Console.ReadLine()!;
 
         _contactManager.AddContactToList(contact);
@@ -69,7 +69,7 @@ public class MenuManager
     {
         try
         {
-            IEnumerable<Contact> contacts = _contactManager.GetContactFromList();
+            IEnumerable<Contact> contacts = _contactManager.GetContactsFromList();
 
             if (contacts.Any())
             {
@@ -114,6 +114,18 @@ public class MenuManager
         catch (Exception ex)
         {
             Console.WriteLine($"An error occurred while removing the contact: {ex.Message}");
+        }
+    }
+
+    public void ExitProgram()
+    {
+        Console.Clear();
+        Console.WriteLine("Are you sure that you want to close the application? (y/n)");
+        var option = Console.ReadLine() ?? "";
+
+        if (option.Equals("y", StringComparison.OrdinalIgnoreCase))
+        {
+            Environment.Exit(5);
         }
     }
 }

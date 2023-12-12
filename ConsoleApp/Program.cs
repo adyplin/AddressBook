@@ -5,12 +5,14 @@ MenuManager menuManager = new MenuManager();
 while (true)
 {
     Console.Clear();
-    Console.WriteLine("1. Add Contact");
-    Console.WriteLine("2. Show One Contact");
-    Console.WriteLine("3. Show All Contacts");
-    Console.WriteLine("4. Remove a Contact");
-    Console.WriteLine("5. Exit");
-    Console.Write("Enter your choice: ");
+    Console.WriteLine("# ADRESS BOOK #");
+    Console.WriteLine();
+    Console.WriteLine($"{"1.", -2} Add Contact");
+    Console.WriteLine($"{"2.",-2} Show One Contact");
+    Console.WriteLine($"{"3.",-2} Show All Contacts");
+    Console.WriteLine($"{"4.",-2} Remove a Contact");
+    Console.WriteLine($"{"5.",-2} Exit");
+    Console.Write("\nEnter your choice: ");
     
 
     int choice;
@@ -43,11 +45,11 @@ while (true)
                 break;
 
             case 5:
-                Console.WriteLine("Exiting the program");
-                return;
+                menuManager.ExitProgram();
+                break;
 
             default:
-                Console.WriteLine("Invalid choice. Please try again.");
+                Console.WriteLine("\nInvalid choice. Please try again.");
                 Console.ReadKey();
                 break;
         }
@@ -55,7 +57,7 @@ while (true)
 
     else
     {
-        Console.WriteLine("Invalid input. Please enter a number.");
+        Console.WriteLine("\nInvalid input. Please enter a number.");
         Console.ReadKey();
     }
 }
