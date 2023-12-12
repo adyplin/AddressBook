@@ -26,7 +26,7 @@ public class FileManager(string filePath) : IFileManager
         catch (Exception ex) { Debug.WriteLine(ex.Message); }
         return false;
 
-        /// Sparar innehåll och returnerar true ifall den lyckas spara en kontakt annars returnera false
+        // Sparar innehåll och returnerar true ifall den lyckas spara en kontakt annars returnera false
     }
 
 
@@ -45,6 +45,6 @@ public class FileManager(string filePath) : IFileManager
         catch (Exception ex) { Debug.WriteLine(ex.Message); }
         return null!;
 
-        /// Om filen existerar så kommer innehållet att läsas ut annars går den till catch delen
+        // Om filen existerar så kommer innehållet att läsas ut annars går den till catch delen
     }
 }

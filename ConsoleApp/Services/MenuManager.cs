@@ -47,7 +47,7 @@ public class MenuManager
 
             if (contactToShow != null)
             {
-                Console.WriteLine("Contact information:");
+                Console.WriteLine("\nContact information:\n");
                 Console.WriteLine($"Name: {contactToShow.FirstName} {contactToShow.LastName}");
                 Console.WriteLine($"Email: {contactToShow.Email}");
                 Console.WriteLine($"Phone Number: {contactToShow.PhoneNumber}");
@@ -56,7 +56,7 @@ public class MenuManager
             }
             else
             {
-                Console.WriteLine("Contact not found.");
+                Console.WriteLine("\nContact not found.");
             }
         }
         catch (Exception ex)
@@ -73,12 +73,12 @@ public class MenuManager
 
             if (contacts.Any())
             {
-                Console.WriteLine("All Contacts:");
+                Console.WriteLine("\nAll Contacts:\n");
                 foreach (var contact in contacts)
                 {
                     Console.WriteLine($"Name: {contact.FirstName} {contact.LastName}");
                     Console.WriteLine($"Email: {contact.Email}");
-                    Console.WriteLine("---------------");
+                    Console.WriteLine("\n---------------");
                 }
             }
             else
