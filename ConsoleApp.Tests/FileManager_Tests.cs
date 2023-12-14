@@ -18,7 +18,7 @@ public class FileManager_Tests
 
         // Assert
 
-        Assert.True(result );
+        Assert.True(result);
     }
     
     [Fact]
